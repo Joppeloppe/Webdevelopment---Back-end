@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>EDIT BOOK - Inlämningsuppgift 6 - Joakim Levin</title>
+        <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    </head>
+
+
+    <body>
+        <!-- " Global navigation " -->
+        <a href="{{ url_for('index') }}"><button type="button" class="btn btn-primary">Home</button></a>
+        <a href="{{ url_for('library') }}"><button type="button" class="btn btn-primary">Library</button></a>
+        <a href="{{ url_for('add_book') }}"><button type="button" class="btn btn-primary">Add a new book</button></a>
+
+        <div class="page-header">
+            <h1>EDIT BOOK</h1>
+        </div>
+
+            <form action="/editbook" method="post" id="edit-book">
+
+            <input type="text" name="title" value="{{ title }}"> Title<br>
+			<input type="text" name="published" value="{{ published }}"> Published<br>
+			<input type="text" name="author" value="{{ author }}"> Author<br>
+
+            <input type="submit" value="Submit"><br>
+        </form>
+
+    </body>
+
+</html>

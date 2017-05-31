@@ -1,0 +1,14 @@
+{
+    "book": [
+        {
+            "author": "George Lucas",
+            "published": "1977",
+            "title": "Star Wars"
+        },
+        {
+            "author": "J.K. Rowling",
+            "published": "2001",
+            "title": "Harry Potter"
+        }
+    ]
+}

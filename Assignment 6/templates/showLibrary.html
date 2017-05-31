@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>SHOW LIBRARY - Inlämningsuppgift 6 - Joakim Levin</title>
+        <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    </head>
+
+
+    <body>
+        <!-- " Global navigation " -->
+        <a href="{{ url_for('index') }}"><button type="button" class="btn btn-primary">Home</button></a>
+        <a href="{{ url_for('library') }}"><button type="button" class="btn btn-primary">Library</button></a>
+        <a href="{{ url_for('add_book') }}"><button type="button" class="btn btn-primary">Add a new book</button></a>
+
+        <div class="page-header">
+            <h1>LIBRARY</h1>
+        </div>
+
+        <a href="{{ url_for('library_json', title=None, filename='main.py') }}"><button type="button" class="btn btn-primary">Library as JSON</button></a>
+        <br>
+
+        {% for book in library %}
+        <br>
+            <li>
+                {{book.title}}
+                <br>
+                {{book.published}}
+                <br>
+                {{book.author}}
+                <br><br>
+
+                <a href="{{ url_for('edit', title=book.title, filename='main.py') }}"><button type="button" class="btn btn-primary">Edit book</button></a>
+                <a href="{{ url_for('library_json', title=book.title, filename='main.py') }}"><button type="button" class="btn btn-primary">Book as JSON</button></a>
+
+            </li>
+        <br>
+        {% endfor %}
+
+
+
+    </body>
+
+</html>
